@@ -2,6 +2,13 @@
 
 **👉 <https://www.pkmn.help>**
 
+# My Contributions 
+- Replaced type colors with intuitive icons for better accessibility
+- Added hover effects to navigation for improved UX
+- Enhanced visual design while maintaining all functionality
+  
+
+*[Link to original PR if merged]*
 # Pokémon Type Calculator
 
 Your premier Pokémon companion

@@ -6,7 +6,11 @@
 - Replaced type colors with intuitive icons for better accessibility
 - Added hover effects to navigation for improved UX
 - Enhanced visual design while maintaining all functionality
-  
+
+## Before 
+![image](https://github.com/user-attachments/assets/e89b53a7-795e-4648-8f90-10c9ae47a897)
+## After 
+![image](https://github.com/user-attachments/assets/47820700-da6e-4513-9f98-90328d61ff07)
 
 *[Link to original PR if merged]*
 # Pokémon Type Calculator

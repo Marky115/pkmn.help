@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection Break Reminder</title>
+    <link rel="stylesheet" href="emotion-detector.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎥 Emotion Detection Break Reminder</h1>
+            <p class="subtitle">Taking care of your wellbeing during meetings</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Webcam Feed -->
+            <div class="video-container">
+                <video id="video" autoplay muted playsinline></video>
+                <canvas id="overlay"></canvas>
+                <div class="status" id="status">
+                    <span class="status-dot"></span>
+                    <span id="statusText">Initializing...</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">
+                    <span>Start Detection</span>
+                </button>
+                <button id="stopBtn" class="btn btn-secondary" disabled>
+                    <span>Stop</span>
+                </button>
+            </div>
+
+            <!-- Stats Dashboard -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">😊</div>
+                    <div class="stat-value" id="happyCount">0</div>
+                    <div class="stat-label">Happy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">😐</div>
+                    <div class="stat-value" id="neutralCount">0</div>
+                    <div class="stat-label">Neutral</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">😞</div>
+                    <div class="stat-value" id="sadCount">0</div>
+                    <div class="stat-label">Sad/Tired</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value" id="sessionTime">0:00</div>
+                    <div class="stat-label">Session Time</div>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings-card">
+                <h3>⚙️ Settings</h3>
+                <div class="setting-item">
+                    <label for="threshold">
+                        Unhappy Threshold (minutes):
+                        <span id="thresholdValue">2</span>
+                    </label>
+                    <input type="range" id="threshold" min="1" max="10" value="2" step="1">
+                    <small>Time of unhappy expressions before suggesting a break</small>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="soundEnabled" checked>
+                        Enable notification sounds
+                    </label>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div id="notification" class="notification hidden">
+                <div class="notification-content">
+                    <h3 id="notificationTitle">Time for a Break!</h3>
+                    <p id="notificationMessage"></p>
+                    <button id="dismissBtn" class="btn btn-small">Got it!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips-section">
+            <h3>💡 Eye Care Tips</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>20-20-20 Rule</h4>
+                    <p>Every 20 minutes, look at something 20 feet away for 20 seconds</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Blink More</h4>
+                    <p>Blink frequently to keep eyes moist and reduce dryness</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Adjust Lighting</h4>
+                    <p>Reduce glare and ensure proper ambient lighting</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Take Breaks</h4>
+                    <p>Stand up, stretch, and move around every hour</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Privacy Notice: All processing happens locally in your browser. No data is sent to any server.</p>
+        </footer>
+    </div>
+
+    <script src="emotion-detector.js"></script>
+</body>
+</html>
